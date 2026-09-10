@@ -29,12 +29,12 @@ const queryClient = new QueryClient();
 
 // Duplicate this object to create a keepsake for another MDSL colleague.
 const keepsakeContent = {
-  accessCode: 'MDSL-26',
+  accessCode: 'MDSL-110',
   recipient: {
-    name: 'Dara',
-    fullName: 'Dara Agunbiade',
+    name: 'Engr Dara',
+    fullName: 'Engr Dara Agunbiade',
     role: 'SIWES Intern',
-    department: 'Technical Operations',
+    department: 'Technical/Operations',
     location: 'Lagos, Nigeria',
     portrait: '/images/pic0.jpg',
   },
@@ -85,23 +85,23 @@ const keepsakeContent = {
   gallery: [
     {
       src: '/images/pic1.jpg',
-      alt: 'Placeholder photo of colleagues collaborating around a table',
-      caption: 'The good kind of busy',
+      alt: 'Placeholder1',
+      caption: 'Troubleshooting',
     },
     {
       src: '/images/pic2.jpg',
-      alt: 'Placeholder photo of a technical workspace',
-      caption: 'Curiosity at work',
+      alt: 'Placeholder2',
+      caption: 'Chop Chop break',
     },
     {
       src: '/images/pic3.jpg',
-      alt: 'Placeholder photo of a team sharing an idea',
-      caption: 'Better together',
+      alt: 'Placeholder3',
+      caption: 'Disembarking',
     },
     {
       src: '/images/pic4.jpg',
-      alt: 'Placeholder photo of a person working at a laptop',
-      caption: 'The next chapter',
+      alt: 'Placeholder4',
+      caption: 'Engr Victor',
     },
   ],
   closing:
@@ -409,7 +409,7 @@ function KeepsakePage() {
             <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
               <div>
                 <SectionKicker>Lessons I am taking with me</SectionKicker>
-                <h2 className="serif mt-5 text-5xl leading-[.86] tracking-[-.045em] text-[hsl(var(--primary))] sm:text-6xl">Keep these close.</h2>
+                <h2 className="serif mt-5 text-5xl leading-[.86] tracking-[-.045em] text-[hsl(var(--primary))] sm:text-6xl">Keeping these close.</h2>
               </div>
               <p className="max-w-xs text-sm leading-6 text-[hsl(var(--muted-foreground))]">A few lessons I am taking from the desk, the stand-up, and the moments in between.</p>
             </div>
