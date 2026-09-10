@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 39 44% 94%;
+  --foreground: 213 49% 17%;
+  --border: 38 24% 78%;
+  --input: 38 24% 78%;
+  --ring: 34 96% 54%;
+  --card: 39 46% 97%;
+  --card-foreground: 213 49% 17%;
+  --card-border: 38 24% 82%;
+  --primary: 213 85% 23%;
+  --primary-foreground: 39 44% 94%;
+  --secondary: 35 89% 57%;
+  --secondary-foreground: 213 49% 17%;
+  --muted: 38 27% 87%;
+  --muted-foreground: 213 18% 42%;
+  --accent: 30 87% 92%;
+  --accent-foreground: 213 85% 23%;
+  --destructive: 5 63% 44%;
+  --destructive-foreground: 39 44% 94%;
+  --app-font-sans: 'DM Sans', sans-serif;
+  --app-font-serif: 'Instrument Serif', Georgia, serif;
+  --app-font-mono: 'DM Mono', monospace;
+  --radius: 0.75rem;
+  --shadow-sm: 0 8px 22px rgba(22, 43, 69, 0.08);
+  --shadow-md: 0 18px 45px rgba(22, 43, 69, 0.12);
+}
+
+.dark {
+  --background: 213 49% 12%;
+  --foreground: 39 44% 94%;
+  --border: 213 29% 28%;
+  --input: 213 29% 28%;
+  --ring: 35 89% 57%;
+  --card: 213 43% 16%;
+  --card-foreground: 39 44% 94%;
+  --card-border: 213 29% 28%;
+  --primary: 35 89% 57%;
+  --primary-foreground: 213 49% 12%;
+  --secondary: 213 68% 42%;
+  --secondary-foreground: 39 44% 94%;
+  --muted: 213 32% 24%;
+  --muted-foreground: 39 17% 73%;
+  --accent: 213 42% 23%;
+  --accent-foreground: 39 44% 94%;
+  --destructive: 5 63% 54%;
+  --destructive-foreground: 39 44% 94%;
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    min-width: 320px;
+  }
+  button, input { font: inherit; }
+  ::selection { background: hsl(var(--secondary)); color: hsl(var(--primary)); }
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes ripple {
+  0% { transform: scale(.76); opacity: .68; }
+  70%, 100% { transform: scale(1.34); opacity: 0; }
+}
+@keyframes pulseCore {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes shimmer {
+  from { background-position: 0 0; }
+  to { background-position: 200% 0; }
+}
+
+.reveal { animation: floatIn .8s cubic-bezier(.22, 1, .36, 1) both; }
+.reveal-delay-1 { animation-delay: .1s; }
+.reveal-delay-2 { animation-delay: .2s; }
+.reveal-delay-3 { animation-delay: .3s; }
+.reveal-delay-4 { animation-delay: .4s; }
+.scroll-reveal { opacity: 0; transform: translateY(18px); transition: opacity .75s ease, transform .75s cubic-bezier(.22, 1, .36, 1); }
+.scroll-reveal.is-visible { opacity: 1; transform: translateY(0); }
+.tap-ripple { animation: ripple 2.6s ease-out infinite; }
+.tap-ripple-delay { animation-delay: 1.2s; }
+.tap-core { animation: pulseCore 2.6s ease-in-out infinite; }
+.paper-grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .035;
+  z-index: 50;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+}
+.eyebrow { letter-spacing: .18em; text-transform: uppercase; font-family: var(--app-font-mono); font-size: .65rem; }
+.serif { font-family: var(--app-font-serif); }
+.mono { font-family: var(--app-font-mono); }
+.soft-shadow { box-shadow: var(--shadow-md); }
+.focus-ring:focus-visible { outline: 3px solid hsl(var(--secondary) / .65); outline-offset: 4px; }
+.gallery-scroll { scrollbar-width: thin; scrollbar-color: hsl(var(--secondary)) transparent; }
+.gallery-scroll::-webkit-scrollbar { height: 5px; }
+.gallery-scroll::-webkit-scrollbar-thumb { background: hsl(var(--secondary)); border-radius: 99px; }
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: #f4efdf !important; }
+  .paper-grain::after { display: none; }
+  .print-page { display: block !important; }
+  section { break-inside: avoid; }
+}
