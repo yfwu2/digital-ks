@@ -227,7 +227,7 @@ function UnlockScreen({ onUnlock }: { onUnlock: () => void }) {
                     setCode(event.target.value);
                     if (status !== 'idle') setStatus('idle');
                   }}
-                  placeholder="MDSL-24"
+                  placeholder="MDSL-26"
                   autoComplete="off"
                   className="min-w-0 flex-1 bg-transparent px-4 py-3.5 text-sm tracking-[.14em] text-[hsl(var(--primary))] outline-none placeholder:text-[hsl(var(--primary)/.42)]"
                   data-testid="input-entry-code"
