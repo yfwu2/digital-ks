@@ -86,7 +86,7 @@ const keepsakeContent = {
     {
       src: '/images/pic1.jpg',
       alt: 'Placeholder1',
-      caption: 'Troubleshooting',
+      caption: 'Learning on the Job',
     },
     {
       src: '/images/pic2.jpg',
@@ -96,7 +96,7 @@ const keepsakeContent = {
     {
       src: '/images/pic3.jpg',
       alt: 'Placeholder3',
-      caption: 'Disembarking',
+      caption: 'Field Service',
     },
     {
       src: '/images/pic4.jpg',
@@ -355,11 +355,6 @@ function KeepsakePage() {
             <p className="mt-8 max-w-xl text-lg leading-8 text-[hsl(var(--muted-foreground))]" data-testid="text-keepsake-intro">
               {keepsakeContent.intro}
             </p>
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-[hsl(var(--muted-foreground))]">
-              <span className="flex items-center gap-2"><Sparkles size={14} className="text-[hsl(var(--secondary-foreground))]" /> {keepsakeContent.recipient.role}</span>
-              <span className="flex items-center gap-2"><MapPin size={14} className="text-[hsl(var(--secondary-foreground))]" /> {keepsakeContent.recipient.location}</span>
-              <span className="flex items-center gap-2"><FileText size={14} className="text-[hsl(var(--secondary-foreground))]" /> {keepsakeContent.recipient.department}</span>
-            </div>
             <button type="button" onClick={scrollToStory} className="focus-ring group mt-10 flex items-center gap-3 text-sm font-semibold text-[hsl(var(--primary))]" data-testid="button-begin-story">
               Begin the story <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[hsl(var(--secondary))] transition-transform group-hover:translate-x-1"><ChevronRight size={17} /></span>
             </button>
